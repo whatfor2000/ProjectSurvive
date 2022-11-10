@@ -7,6 +7,8 @@ public class Movement : MonoBehaviour
     public float speed = 10.0f;
     private Rigidbody rb;
     public Vector3 movement;
+
+    private bool onTheFloor = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +19,20 @@ public class Movement : MonoBehaviour
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Jump");
         float z = Input.GetAxis("Vertical");
-        movement = new Vector3(x,0,z);
+        movement = new Vector3(x,-0.4f,z); 
      }
+     private void OnCollisionEnter(Collision other) {
+         if(other.gameObject.tag == "ground"){
+            onTheFloor = true;
+         }
+        }
      private void FixedUpdate() {
         moveAble(movement);
+        if(Input.GetButton("Jump") && (onTheFloor)){
+         rb.AddForce(new Vector3(0,500,0), ForceMode.Impulse);
+         onTheFloor = false;
+        }
      }
      void moveAble(Vector3 move){
         rb.velocity = move*speed;
