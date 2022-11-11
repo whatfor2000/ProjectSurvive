@@ -6,11 +6,11 @@ public class PlayerController : MonoBehaviour
 {
         public float speed;
 
-        private Animator animator;
+        //private Animator animator;
 
         private void Start()
         {
-            animator = GetComponent<Animator>();
+            //animator = GetComponent<Animator>();
         }
 
 
@@ -20,27 +20,27 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.A))
             {
                 dir.x = -1;
-                animator.SetInteger("Direction", 3);
+                //animator.SetInteger("Direction", 3);
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 dir.x = 1;
-                animator.SetInteger("Direction", 2);
+                //animator.SetInteger("Direction", 2);
             }
 
             if (Input.GetKey(KeyCode.W))
             {
                 dir.y = 1;
-                animator.SetInteger("Direction", 1);
+                //animator.SetInteger("Direction", 1);
             }
             else if (Input.GetKey(KeyCode.S))
             {
                 dir.y = -1;
-                animator.SetInteger("Direction", 0);
+                //animator.SetInteger("Direction", 0);
             }
 
             dir.Normalize();
-            animator.SetBool("IsMoving", dir.magnitude > 0);
+            //animator.SetBool("IsMoving", dir.magnitude > 0);
 
             GetComponent<Rigidbody2D>().velocity = speed * dir;
         }
