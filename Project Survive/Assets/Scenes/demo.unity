@@ -123,6 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &559228697
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +170,9 @@ Transform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &898166265
+=======
+--- !u!1 &257765417
+>>>>>>> parent of 0b986e7a (update map demo)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,10 +180,16 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 898166269}
   - component: {fileID: 898166268}
   - component: {fileID: 898166267}
   - component: {fileID: 898166266}
+=======
+  - component: {fileID: 257765420}
+  - component: {fileID: 257765419}
+  - component: {fileID: 257765418}
+>>>>>>> parent of 0b986e7a (update map demo)
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -267,6 +277,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1512915381
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,3 +473,5 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1981003112}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of 0b986e7a (update map demo)
