@@ -10,6 +10,8 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private Animator animator;
 
+        public WeaponParent weaponParent;
+
         private void Start()
         {
             animator = GetComponent<Animator>();
@@ -40,6 +42,11 @@ namespace Cainos.PixelArtTopDown_Basic
                 dir.y = -1;
                 animator.SetInteger("Direction", 0);
             }
+
+            if(Input.GetMouseButtonDown(0)){
+                weaponParent.Attack();
+            }
+            
 
             dir.Normalize();
             animator.SetBool("IsMoving", dir.magnitude > 0);
