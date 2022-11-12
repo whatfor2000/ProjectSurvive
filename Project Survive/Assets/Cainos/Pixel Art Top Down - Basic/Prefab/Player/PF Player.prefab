@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8611505802261570405}
   - component: {fileID: 2235228628530006424}
   - component: {fileID: 4553865887312502176}
-  - component: {fileID: 711393501470046858}
+  - component: {fileID: 6573453464857722508}
+  - component: {fileID: 3386576925835464274}
   m_Layer: 21
   m_Name: Weapon
   m_TagString: Untagged
@@ -106,7 +107,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!60 &711393501470046858
+--- !u!60 &6573453464857722508
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,6 +140,18 @@ PolygonCollider2D:
       - {x: 0.6875, y: 0.0625}
       - {x: 0.6875, y: 0.09375}
       - {x: 2, y: 1.78125}
+--- !u!114 &3386576925835464274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2566814969741701963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d536a645cd5e3174f82ec9a58e4e633e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5148409865924770882
 GameObject:
   m_ObjectHideFlags: 0
