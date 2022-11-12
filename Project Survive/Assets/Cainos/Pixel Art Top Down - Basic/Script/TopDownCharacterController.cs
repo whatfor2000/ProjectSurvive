@@ -12,6 +12,8 @@ namespace Cainos.PixelArtTopDown_Basic
 
         public WeaponParent weaponParent;
 
+        private string dirview = "W";
+
         private void Start()
         {
             animator = GetComponent<Animator>();
@@ -25,26 +27,31 @@ namespace Cainos.PixelArtTopDown_Basic
             {
                 dir.x = -1;
                 animator.SetInteger("Direction", 3);
+                dirview = "A";
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 dir.x = 1;
                 animator.SetInteger("Direction", 2);
+                dirview = "D";
             }
 
             if (Input.GetKey(KeyCode.W))
             {
                 dir.y = 1;
                 animator.SetInteger("Direction", 1);
+                dirview = "W";
             }
             else if (Input.GetKey(KeyCode.S))
             {
                 dir.y = -1;
                 animator.SetInteger("Direction", 0);
+                dirview = "S";
+
             }
 
             if(Input.GetMouseButtonDown(0)){
-                weaponParent.Attack();
+                weaponParent.Attack(dirview);
             }
             
 
