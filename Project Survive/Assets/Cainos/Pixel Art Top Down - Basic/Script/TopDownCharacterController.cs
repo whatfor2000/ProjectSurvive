@@ -10,62 +10,49 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private Animator animator;
 
-        private WeaponParent weaponParent;
+        private WeaponMethod weaponMethod;
 
         private string dirview = "W";
 
         private void Start()
         {
-            weaponParent = GameObject.Find("Sword").GetComponent<WeaponParent>();
+         weaponMethod = GameObject.Find("Sword").GetComponent<WeaponMethod>();
             animator = GetComponent<Animator>();
         }
-
-
-        private void Update()
-        {
+        private void Update(){
             Vector2 dir = Vector2.zero;
-            if (Input.GetKey(KeyCode.A))
-            {
+            if (Input.GetKey(KeyCode.A)){
                 dir.x = -1;
                 animator.SetInteger("Direction", 3);
                 dirview = "A";
-            }
-            else if (Input.GetKey(KeyCode.D))
-            {
+            }else if (Input.GetKey(KeyCode.D)){
                 dir.x = 1;
                 animator.SetInteger("Direction", 2);
                 dirview = "D";
             }
 
-            if (Input.GetKey(KeyCode.W))
-            {
+            if (Input.GetKey(KeyCode.W)){
                 dir.y = 1;
                 animator.SetInteger("Direction", 1);
                 dirview = "W";
-            }
-            else if (Input.GetKey(KeyCode.S))
-            {
+            }else if (Input.GetKey(KeyCode.S)){
                 dir.y = -1;
                 animator.SetInteger("Direction", 0);
                 dirview = "S";
-
             }
 
             if(Input.GetKey(KeyCode.Alpha1))
-                weaponParent = GameObject.Find("Sword64").GetComponent<WeaponParent>();
+             weaponMethod = GameObject.Find("Sword64").GetComponent<WeaponMethod>();
 
             if(Input.GetKey(KeyCode.Alpha2))
-                weaponParent = GameObject.Find("Sword").GetComponent<WeaponParent>();
+             weaponMethod = GameObject.Find("Sword").GetComponent<WeaponMethod>();
 
 
             if(Input.GetMouseButtonDown(0)){
-                weaponParent.Attack(dirview);
+             weaponMethod.Attack(dirview);
             }
 
           
-
-            
-
             dir.Normalize();
             animator.SetBool("IsMoving", dir.magnitude > 0);
 

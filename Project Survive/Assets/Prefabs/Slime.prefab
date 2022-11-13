@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5939617187584208176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.53855926, y: 1.4453392, z: 0.10108129}
+  m_LocalPosition: {x: -0.532, y: 1.482, z: 0.10108129}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -60,11 +60,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.028639853, y: 0.41001916}
-      - {x: -0.4756351, y: 0.26319328}
-      - {x: -0.34721053, y: -0.007101536}
-      - {x: 0.42167425, y: 0.010082543}
-      - {x: 0.52145886, y: 0.25173742}
+    - - {x: 0.047058403, y: 0.29336834}
+      - {x: -0.26075208, y: 0.14040294}
+      - {x: -0.5015391, y: -0.039388776}
+      - {x: -0.3779081, y: -0.2895193}
+      - {x: 0.021247447, y: -0.28142154}
+      - {x: 0.37255812, y: -0.28461426}
+      - {x: 0.49690086, y: -0.042959392}
 --- !u!95 &286327600006660730
 Animator:
   serializedVersion: 4
@@ -149,3 +151,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4688fcaa399e73743878e7fbaac68754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 5
