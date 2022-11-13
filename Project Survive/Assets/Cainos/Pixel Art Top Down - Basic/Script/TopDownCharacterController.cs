@@ -10,7 +10,7 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private Animator animator;
 
-        public WeaponParent weaponParent;
+        private WeaponParent weaponParent;
 
         private string dirview = "W";
 
@@ -51,17 +51,18 @@ namespace Cainos.PixelArtTopDown_Basic
 
             }
 
+            if(Input.GetKey(KeyCode.Alpha1))
+                weaponParent = GameObject.Find("Sword64").GetComponent<WeaponParent>();
+
+            if(Input.GetKey(KeyCode.Alpha2))
+                weaponParent = GameObject.Find("Sword").GetComponent<WeaponParent>();
+
+
             if(Input.GetMouseButtonDown(0)){
                 weaponParent.Attack(dirview);
             }
 
-            if(Input.GetKey(KeyCode.Alpha1)){
-                weaponParent = GameObject.Find("Sword64").GetComponent<WeaponParent>();
-            }
-            if(Input.GetKey(KeyCode.Alpha2)){
-                weaponParent = GameObject.Find("Sword").GetComponent<WeaponParent>();
-            }
-
+          
 
             
 

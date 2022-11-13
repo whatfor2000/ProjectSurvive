@@ -9,6 +9,12 @@ public class WeaponParent : MonoBehaviour
      public float delay = 0.3f;
      private bool attackBlocked = false;
     // Start is called before the first frame update
+
+
+
+    private void Start() {
+        animator = GetComponent<Animator>();
+    }
     public void Attack(string dirview){
         if(attackBlocked)
             return;
