@@ -50,22 +50,25 @@ namespace Cainos.PixelArtTopDown_Basic
             Vector2 dir = Vector2.zero;
             if (Input.GetAxisRaw("Horizontal") < 0){
                 dir.x = -1;
-                animator.SetTrigger("walk");
+                animator.SetBool("IsWalk",true);
                 mousedir();
             }else if (Input.GetAxisRaw("Horizontal") > 0){
                 dir.x = 1;
-                animator.SetTrigger("walk"); 
+                animator.SetBool("IsWalk",true);
                 mousedir();
             }
-
             if (Input.GetAxisRaw("Vertical") > 0){
                 dir.y = 1;
-                animator.SetTrigger("walk"); 
+                animator.SetBool("IsWalk",true); 
                 mousedir();
             }else if (Input.GetAxisRaw("Vertical") < 0){
                 dir.y = -1;
-                animator.SetTrigger("walk"); 
+                animator.SetBool("IsWalk",true); 
                 mousedir();
+            }
+
+            if(Input.GetAxisRaw("Vertical").Equals(0)  && Input.GetAxisRaw("Horizontal").Equals(0)){
+                animator.SetBool("IsWalk",false);
             }
 
             if(Input.GetKey(KeyCode.Alpha1))
