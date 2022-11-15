@@ -21,46 +21,51 @@ namespace Cainos.PixelArtTopDown_Basic
         private Vector2 pointerInput;
 
 
+
         [SerializeField]
         private InputActionReference pointterPosition;
 
 
         
 
-        private void Start()
-        {
+        private void Start(){
+         
             weaponMethod = GameObject.Find("Sword").GetComponent<WeaponMethod>();
             animator = GetComponent<Animator>();
 
         }
+
+        void mousedir(){
+            if(pointerInput.x > 0){
+                GetComponent<SpriteRenderer>().flipX = false;
+            }else if(pointerInput.x < 0){
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+        }
         private void Update(){
 
             pointerInput = GetPointerInput();
-
-            Debug.Log(pointerInput);
-
-            if(pointerInput.x > 0){
-                animator.SetInteger("Direction", 2);
-            }else if(pointerInput.x < 0){
-                animator.SetInteger("Direction", 3);
-            }
-
-
+            mousedir();
+            
             Vector2 dir = Vector2.zero;
-            if (Input.GetKey(KeyCode.A)){
+            if (Input.GetAxisRaw("Horizontal") < 0){
                 dir.x = -1;
-                dirview = "A";
-            }else if (Input.GetKey(KeyCode.D)){
+                animator.SetTrigger("walk");
+                mousedir();
+            }else if (Input.GetAxisRaw("Horizontal") > 0){
                 dir.x = 1;
-                dirview = "D";
+                animator.SetTrigger("walk"); 
+                mousedir();
             }
 
-            if (Input.GetKey(KeyCode.W)){
+            if (Input.GetAxisRaw("Vertical") > 0){
                 dir.y = 1;
-                dirview = "W";
-            }else if (Input.GetKey(KeyCode.S)){
+                animator.SetTrigger("walk"); 
+                mousedir();
+            }else if (Input.GetAxisRaw("Vertical") < 0){
                 dir.y = -1;
-                dirview = "S";
+                animator.SetTrigger("walk"); 
+                mousedir();
             }
 
             if(Input.GetKey(KeyCode.Alpha1))
@@ -76,14 +81,12 @@ namespace Cainos.PixelArtTopDown_Basic
 
           
             dir.Normalize();
-            animator.SetBool("IsMoving", dir.magnitude > 0);
-
             GetComponent<Rigidbody2D>().velocity = speed * dir;
         }
         private Vector2 GetPointerInput(){
             Vector3 mousePos = pointterPosition.action.ReadValue<Vector2>();
             mousePos.z = UnityEngine.Camera.main.nearClipPlane;
-            return UnityEngine.Camera.main.ScreenToWorldPoint(mousePos);
+            return UnityEngine.Camera.main.ScreenToWorldPoint(mousePos) - transform.position;
         }
     }
 }
