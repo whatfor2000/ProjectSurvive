@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 383527222}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -709,7 +709,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &445214759
 PrefabInstance:
@@ -741,7 +741,7 @@ PrefabInstance:
     - target: {fileID: 5939617187584208179, guid: 1281fe071d420bb46bfe8926fd9a5ac5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5939617187584208179, guid: 1281fe071d420bb46bfe8926fd9a5ac5,
         type: 3}
@@ -14777,7 +14777,7 @@ RectTransform:
   - {fileID: 1665362815}
   - {fileID: 778019780}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -15412,7 +15412,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &916755312
 PrefabInstance:
@@ -18908,7 +18908,7 @@ PrefabInstance:
     - target: {fileID: 5939617187584208179, guid: 1281fe071d420bb46bfe8926fd9a5ac5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5939617187584208179, guid: 1281fe071d420bb46bfe8926fd9a5ac5,
         type: 3}
@@ -20338,7 +20338,7 @@ Transform:
   - {fileID: 119680997}
   - {fileID: 2004760944}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2004760943
 GameObject:
