@@ -16,7 +16,7 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private WeaponMethod weaponMethod;
 
-        private string dirview = "W";
+    
 
         private Vector2 pointerInput;
 
@@ -74,10 +74,7 @@ namespace Cainos.PixelArtTopDown_Basic
                 animator.SetBool("IsWalk",false);
             }
 
-            if(Input.GetMouseButtonDown(0)){
-             weaponMethod.Attack(dirview);
-            }
-
+            
           
             dir.Normalize();
             GetComponent<Rigidbody2D>().velocity = speed * dir;

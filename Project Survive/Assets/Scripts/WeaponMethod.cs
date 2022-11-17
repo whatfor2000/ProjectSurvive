@@ -15,28 +15,21 @@ public class WeaponMethod : MonoBehaviour
     private void Start() {
         animator = GetComponent<Animator>();
     }
-    public void Attack(string dirview){
-        if(attackBlocked)
+
+    private void Update() {
+        if(Input.GetMouseButtonDown(0)){
+             Attack();
+            }
+
+    }
+    public void Attack(){
+    
+        if(!attackBlocked){
+            animator.SetTrigger("swing");
+            attackBlocked = true;
+            StartCoroutine(DelayAttack());
+        }else{
             return;
-        if(dirview == "W"){
-            animator.SetTrigger("Attack_W");
-            attackBlocked = true;
-            StartCoroutine(DelayAttack());
-        }
-        if(dirview == "A"){
-            animator.SetTrigger("Attack_A");
-            attackBlocked = true;
-            StartCoroutine(DelayAttack());
-        }
-        if(dirview == "S"){
-            animator.SetTrigger("Attack_S");
-            attackBlocked = true;
-            StartCoroutine(DelayAttack());
-        }
-        if(dirview == "D"){
-            animator.SetTrigger("Attack_D");
-            attackBlocked = true;
-            StartCoroutine(DelayAttack());
         }
     }
 
