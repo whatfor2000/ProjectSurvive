@@ -20,6 +20,8 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private Vector2 pointerInput;
 
+        private WeaponParent weaponParent;
+
 
 
         [SerializeField]
@@ -29,7 +31,8 @@ namespace Cainos.PixelArtTopDown_Basic
         
 
         private void Start(){
-         
+
+            weaponParent = GetComponentInChildren<WeaponParent>();
             weaponMethod = GameObject.Find("Sword").GetComponent<WeaponMethod>();
             animator = GetComponent<Animator>();
 
@@ -45,6 +48,7 @@ namespace Cainos.PixelArtTopDown_Basic
         private void Update(){
 
             pointerInput = GetPointerInput();
+            weaponParent.Pointerposition = pointerInput;
             mousedir();
             
             Vector2 dir = Vector2.zero;
@@ -66,17 +70,9 @@ namespace Cainos.PixelArtTopDown_Basic
                 animator.SetBool("IsWalk",true); 
                 mousedir();
             }
-
             if(Input.GetAxisRaw("Vertical").Equals(0)  && Input.GetAxisRaw("Horizontal").Equals(0)){
                 animator.SetBool("IsWalk",false);
             }
-
-            if(Input.GetKey(KeyCode.Alpha1))
-             weaponMethod = GameObject.Find("Sword64").GetComponent<WeaponMethod>();
-
-            if(Input.GetKey(KeyCode.Alpha2))
-             weaponMethod = GameObject.Find("Sword").GetComponent<WeaponMethod>();
-
 
             if(Input.GetMouseButtonDown(0)){
              weaponMethod.Attack(dirview);
