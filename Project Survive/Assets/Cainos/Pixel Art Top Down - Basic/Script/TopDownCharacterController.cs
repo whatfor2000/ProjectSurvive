@@ -8,28 +8,15 @@ namespace Cainos.PixelArtTopDown_Basic
 {
     public class TopDownCharacterController : MonoBehaviour
     {
-
-
-        public float speed;
-
+        public float speed = 3;
         private Animator animator;
-
         private WeaponMethod weaponMethod;
-
-    
-
         private Vector2 pointerInput;
-
         private WeaponParent weaponParent;
-
-
-
+        private bool isdodge = false;
+        private bool iframe = false;
         [SerializeField]
         private InputActionReference pointterPosition;
-
-
-        
-
         private void Start(){
 
             weaponParent = GetComponentInChildren<WeaponParent>();
@@ -37,7 +24,6 @@ namespace Cainos.PixelArtTopDown_Basic
             animator = GetComponent<Animator>();
 
         }
-
         void mousedir(){
             if(pointerInput.x > 0){
                 GetComponent<SpriteRenderer>().flipX = false;
@@ -74,10 +60,27 @@ namespace Cainos.PixelArtTopDown_Basic
                 animator.SetBool("IsWalk",false);
             }
 
+            if(Input.GetAxisRaw("Jump").Equals(1) && isdodge == false){
+                speed = 10;
+                animator.SetBool("isdodge",true);
+                iframe = true;
+                isdodge = true;
+                StartCoroutine(Delay());
+            }
+
             
           
             dir.Normalize();
             GetComponent<Rigidbody2D>().velocity = speed * dir;
+        }
+
+        private IEnumerator Delay(){
+        yield return new WaitForSeconds(0.1f);
+        iframe = false;
+        speed = 3;
+        animator.SetBool("isdodge",false);
+        yield return new WaitForSeconds(2);
+        isdodge = false;
         }
         private Vector2 GetPointerInput(){
             Vector3 mousePos = pointterPosition.action.ReadValue<Vector2>();
