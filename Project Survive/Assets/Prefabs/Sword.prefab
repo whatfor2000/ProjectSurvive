@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4127209638133967317}
   - component: {fileID: 2138795636746490663}
   - component: {fileID: 3224047626432449317}
-  - component: {fileID: 4560696425617419492}
+  - component: {fileID: 7566160967985627651}
   m_Layer: 21
   m_Name: Sword
   m_TagString: weapon
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 40768713539239428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.8752, z: 1}
+  m_LocalScale: {x: 5.236748, y: 3.559617, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,7 +110,7 @@ SpriteRenderer:
   m_SortingLayerID: -1869315837
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a9d249b3ad2b1924ea31c58138fc7fb0, type: 3}
+  m_Sprite: {fileID: 1176734573, guid: 64092040801980b409379d4aa3cb01d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -121,7 +121,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &4560696425617419492
+--- !u!60 &7566160967985627651
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,14 +131,14 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5000002, y: -0.0010312836}
+    oldSize: {x: 0.06, y: 0.29}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -146,9 +146,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0}
-      - {x: 0.5006726, y: 0.05738187}
-      - {x: 0.99521816, y: 0.74865484}
-      - {x: 1, y: 1}
-      - {x: 0.7384186, y: 1.0095637}
-      - {x: 0.057381876, y: 0.48289055}
+    - - {x: 0.01999999, y: 0.29029906}
+      - {x: -0.030000009, y: 0.29029906}
+      - {x: -0.030000009, y: 0.00029907227}
+      - {x: 0.02999999, y: 0.00029907227}
+      - {x: 0.02999999, y: 0.28029907}
