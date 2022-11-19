@@ -6,7 +6,7 @@ public class WeaponMethod : MonoBehaviour
 {
 
     public Animator animator;
-     public float delay = 0.3f;
+     public float delay;
      private bool attackBlocked = false;
     // Start is called before the first frame update
 
@@ -20,11 +20,10 @@ public class WeaponMethod : MonoBehaviour
         if(Input.GetMouseButton(0)){
              Attack();
             }
-
     }
     public void Attack(){
     
-        if(!attackBlocked){
+        if(attackBlocked == false){
             animator.SetTrigger("swing");
             attackBlocked = true;
             StartCoroutine(DelayAttack());
@@ -32,14 +31,12 @@ public class WeaponMethod : MonoBehaviour
             return;
         }
     }
-
-    private IEnumerator DelayAttack()
-    {
+    private IEnumerator DelayAttack(){
+        Debug.Log(delay);
         yield return new WaitForSeconds(delay);
         attackBlocked = false;
     }
     private int baseDamage = 2;
-
     private void OnTriggerEnter2D(Collider2D target) {
         if(target.gameObject.CompareTag("Enamy")){
             target.gameObject.GetComponent<Health>().TakeDamage(baseDamage); 
