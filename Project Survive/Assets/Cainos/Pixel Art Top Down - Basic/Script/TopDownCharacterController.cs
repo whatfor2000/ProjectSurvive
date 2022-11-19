@@ -75,7 +75,7 @@ namespace Cainos.PixelArtTopDown_Basic
         }
 
         private IEnumerator Delay(){
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         iframe = false;
         speed = 3;
         animator.SetBool("isdodge",false);
