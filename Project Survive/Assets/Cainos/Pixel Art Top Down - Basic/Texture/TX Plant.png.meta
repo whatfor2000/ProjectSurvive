@@ -561,7 +561,7 @@ TextureImporter:
       name: TX Bush T1
       rect:
         serializedVersion: 2
-        x: 38
+        x: 39
         y: 295
         width: 22
         height: 19
@@ -583,7 +583,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 216
-        y: 285
+        y: 284
         width: 47
         height: 42
       alignment: 7
