@@ -6,8 +6,9 @@ public class WeaponMethod : MonoBehaviour
 {
 
     public Animator animator;
-     public float delay;
+     public float attackspeed;
      private bool attackBlocked = false;
+
     // Start is called before the first frame update
 
 
@@ -24,7 +25,7 @@ public class WeaponMethod : MonoBehaviour
     public void Attack(){
     
         if(attackBlocked == false){
-            animator.SetTrigger("swing");
+            animator.SetTrigger("chage");
             attackBlocked = true;
             StartCoroutine(DelayAttack());
         }else{
@@ -32,8 +33,8 @@ public class WeaponMethod : MonoBehaviour
         }
     }
     private IEnumerator DelayAttack(){
-        Debug.Log(delay);
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(1-attackspeed);
+        animator.SetTrigger("swing");
         attackBlocked = false;
     }
     private int baseDamage = 2;

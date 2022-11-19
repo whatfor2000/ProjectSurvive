@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7d56113b47706445a510ad726afaa95
+guid: c9adf318fd226354994615dbd8554f70
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,64 +105,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Katana_0
+      name: SwordTest01_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 70
+        x: 5
+        y: 144
         width: 6
-        height: 29
-      alignment: 9
-      pivot: {x: 0.5000002, y: 0.003880731}
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c66d38d43258f3b4789154b00f97bb5b
-      internalID: -878234828
+      spriteID: a26a593a83c47c44b9370eaf6436815e
+      internalID: 1530167539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Katana_1
+      name: SwordTest01_1
       rect:
         serializedVersion: 2
-        x: 6
-        y: 17
-        width: 34
-        height: 35
-      alignment: 9
-      pivot: {x: 0.013993684, y: 0.7075703}
+        x: 17
+        y: 146
+        width: 13
+        height: 12
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76f78acac9f4e834089f7491924b22af
-      internalID: -370895594
+      spriteID: 390b900a6ff8e33488d594529cd2bda3
+      internalID: -225699320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Katana_2
+      name: SwordTest01_2
       rect:
         serializedVersion: 2
-        x: 49
-        y: 28
-        width: 40
-        height: 37
-      alignment: 9
-      pivot: {x: 0.02635336, y: 0.27669978}
+        x: 37
+        y: 127
+        width: 21
+        height: 33
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a06c6a6a1e684246be9b9b3fad9a612
-      internalID: 1699511535
+      spriteID: e9f0e6ff3fdfec448bb3adbcea77a733
+      internalID: 1948744603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SwordTest01_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 127
+        width: 16
+        height: 16
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee0323f93c047b4d8a74fa328a214f4
+      internalID: -1724766616
       vertices: []
       indices: 
       edges: []
@@ -178,9 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Katana_2: 1699511535
-      Katana_0: -878234828
-      Katana_1: -370895594
+      SwordTest01_3: -1724766616
+      SwordTest01_0: 1530167539
+      SwordTest01_2: 1948744603
+      SwordTest01_1: -225699320
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
