@@ -18,9 +18,6 @@ public class WeaponMethod : MonoBehaviour
     }
 
     private void Update() {
-        if(Input.GetMouseButton(0)){
-             Attack();
-            }
     }
     public void Attack(){
     
@@ -28,6 +25,7 @@ public class WeaponMethod : MonoBehaviour
             animator.SetTrigger("chage");
             attackBlocked = true;
             StartCoroutine(DelayAttack());
+            
         }else{
             return;
         }

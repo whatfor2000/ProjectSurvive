@@ -35,26 +35,24 @@ namespace Cainos.PixelArtTopDown_Basic
 
             pointerInput = GetPointerInput();
             weaponParent.Pointerposition = pointerInput;
-            mousedir();
-            
             Vector2 dir = Vector2.zero;
             if (Input.GetAxisRaw("Horizontal") < 0){
                 dir.x = -1;
                 animator.SetBool("IsWalk",true);
-                mousedir();
+                GetComponent<SpriteRenderer>().flipX = true;
             }else if (Input.GetAxisRaw("Horizontal") > 0){
                 dir.x = 1;
                 animator.SetBool("IsWalk",true);
-                mousedir();
+                GetComponent<SpriteRenderer>().flipX = false;
             }
             if (Input.GetAxisRaw("Vertical") > 0){
                 dir.y = 1;
                 animator.SetBool("IsWalk",true); 
-                mousedir();
+           
             }else if (Input.GetAxisRaw("Vertical") < 0){
                 dir.y = -1;
                 animator.SetBool("IsWalk",true); 
-                mousedir();
+                
             }
             if(Input.GetAxisRaw("Vertical").Equals(0)  && Input.GetAxisRaw("Horizontal").Equals(0)){
                 animator.SetBool("IsWalk",false);
@@ -66,6 +64,12 @@ namespace Cainos.PixelArtTopDown_Basic
                 iframe = true;
                 isdodge = true;
                 StartCoroutine(Delay());
+            }
+
+            if(Input.GetMouseButton(0)){
+                
+                mousedir();
+                GetComponentInChildren<WeaponMethod>().Attack();
             }
 
             
