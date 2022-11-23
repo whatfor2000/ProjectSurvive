@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  delay: 0.3
+  attackspeed: 0
+  attackBlocked: 0
 --- !u!95 &2138795636746490663
 Animator:
   serializedVersion: 4

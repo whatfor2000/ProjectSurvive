@@ -44,7 +44,8 @@ public class EnemyController : MonoBehaviour
 
     private void FixedUpdate() {
             if(isInChaseRange && !isInAttackRange){
-                MoveCharacter(movement);
+                //MoveCharacter(movement);
+                rb.velocity = Vector2.zero;
             }
             if(isInAttackRange){
                 rb.velocity = Vector2.zero;
@@ -53,6 +54,19 @@ public class EnemyController : MonoBehaviour
         private void MoveCharacter(Vector2 dir){
                rb.MovePosition((Vector2)transform.position + (dir * speed * Time.deltaTime));
         }
+
+        void OnDrawGizmosSelected()
+    {
+        if (target != null)
+        {
+            
+            // Gizmos.color = Color.blue;
+            // Gizmos.DrawLine(transform.position, Vector3.right);
+            // Gizmos.color = Color.blue;
+            // Gizmos.DrawLine(transform.position, Vector3.left);
+
+        }
+    }
 
 
     }

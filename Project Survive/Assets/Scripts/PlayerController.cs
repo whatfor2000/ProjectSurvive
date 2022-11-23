@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
         private bool isdodge = false;
         private bool iframe = false;
 
-        private Vector2 inputKey;
+        public Vector2 inputKey;
         
         [SerializeField]
         private InputActionReference pointterPosition;
@@ -34,26 +34,31 @@ public class PlayerController : MonoBehaviour
             inputKey = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
             pointerInput = GetPointerInput();
             weaponParent.Pointerposition = pointerInput;
+            PlayerControll(inputKey);
+        }
+
+
+        public virtual void PlayerControll(Vector2 input){
             Vector2 dir = Vector2.zero;
-            if (inputKey.x < 0){
+            if (input.x < 0){
                 dir.x = -1;
                 animator.SetBool("IsWalk",true);
                 GetComponent<SpriteRenderer>().flipX = true;
-            }else if (inputKey.x > 0){
+            }else if (input.x > 0){
                 dir.x = 1;
                 animator.SetBool("IsWalk",true);
                 GetComponent<SpriteRenderer>().flipX = false;
             }
-            if (inputKey.y > 0){
+            if (input.y > 0){
                 dir.y = 1;
                 animator.SetBool("IsWalk",true); 
            
-            }else if (inputKey.y < 0){
+            }else if (input.y < 0){
                 dir.y = -1;
                 animator.SetBool("IsWalk",true); 
                 
             }
-            if(inputKey.x.Equals(0)&&inputKey.y.Equals(0)){
+            if(input.x.Equals(0)&&input.y.Equals(0)){
                 animator.SetBool("IsWalk",false);
             }
 
@@ -73,6 +78,7 @@ public class PlayerController : MonoBehaviour
             }
             dir.Normalize();
             GetComponent<Rigidbody2D>().velocity = speed * dir;
+
         }
 
         private IEnumerator Delay(){
