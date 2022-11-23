@@ -67,10 +67,9 @@ namespace Cainos.PixelArtTopDown_Basic
             }
 
             if(Input.GetMouseButton(0)){
+                
+                mousedir();
                 GetComponentInChildren<WeaponMethod>().Attack();
-            }
-            if(GetComponentInChildren<WeaponMethod>().attackBlocked){
-              mousedir();  
             }
 
             

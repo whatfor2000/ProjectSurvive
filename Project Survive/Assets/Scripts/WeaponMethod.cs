@@ -7,7 +7,7 @@ public class WeaponMethod : MonoBehaviour
 
     public Animator animator;
      public float attackspeed;
-     public bool attackBlocked = false;
+     private bool attackBlocked = false;
 
     // Start is called before the first frame update
 
