@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     private Vector2 movement;
     public Vector3 dir;
 
+
     private bool isInChaseRange;
     private bool isInAttackRange;
 
@@ -27,12 +28,13 @@ public class EnemyController : MonoBehaviour
         target = GameObject.FindWithTag("Player").transform;
     }
     private void Update() {
-        anim.SetBool("isRunning",isInChaseRange);
+        Debug.DrawLine(transform.position,target.position,Color.blue);
+        //anim.SetBool("isRunning",isInChaseRange);
 
         isInChaseRange = Physics2D.OverlapCircle(transform.position,checkRadius,whatIsPlayer);
         isInAttackRange = Physics2D.OverlapCircle(transform.position,attackRadius,whatIsPlayer);
 
-        dir = target.position - transform.position;
+        dir = (target.position - transform.position);
         float angle = Mathf.Atan2(dir.y,dir.x) * Mathf.Rad2Deg;
         dir.Normalize();
         movement = dir;
@@ -41,11 +43,10 @@ public class EnemyController : MonoBehaviour
             anim.SetFloat("Y",dir.y);
         }
     }
-
     private void FixedUpdate() {
             if(isInChaseRange && !isInAttackRange){
-                //MoveCharacter(movement);
-                rb.velocity = Vector2.zero;
+                MoveCharacter(movement);
+                
             }
             if(isInAttackRange){
                 rb.velocity = Vector2.zero;
@@ -55,18 +56,9 @@ public class EnemyController : MonoBehaviour
                rb.MovePosition((Vector2)transform.position + (dir * speed * Time.deltaTime));
         }
 
-        void OnDrawGizmosSelected()
-    {
-        if (target != null)
-        {
-            
-            // Gizmos.color = Color.blue;
-            // Gizmos.DrawLine(transform.position, Vector3.right);
-            // Gizmos.color = Color.blue;
-            // Gizmos.DrawLine(transform.position, Vector3.left);
 
-        }
-    }
 
+
+    
 
     }
