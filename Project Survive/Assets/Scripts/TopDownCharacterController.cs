@@ -47,7 +47,7 @@ namespace Cainos.PixelArtTopDown_Basic
             }
             if (Input.GetAxisRaw("Vertical") > 0){
                 dir.y = 1;
-                animator.SetBool("IsWalk",true); 
+                animator.SetBool("IsWalk",true);
            
             }else if (Input.GetAxisRaw("Vertical") < 0){
                 dir.y = -1;
