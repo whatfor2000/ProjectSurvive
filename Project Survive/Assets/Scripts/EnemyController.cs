@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    private bool attackBlocked = false;
     public float speed = 3f;
     public float checkRadius;
     public float attackRadius;
-
     public bool shouldRotate;
 
     public LayerMask whatIsPlayer;
@@ -49,14 +49,23 @@ public class EnemyController : MonoBehaviour
                 
             }
             if(isInAttackRange){
-                rb.velocity = Vector2.zero;
+                if(!attackBlocked){
+                    attackBlocked = true;    
+                    target.GetComponent<Health>().TakeDamage(1);
+                    rb.velocity = Vector2.zero;
+                    StartCoroutine(DelayAttack());
+                }
             }
         }
         private void MoveCharacter(Vector2 dir){
-               rb.MovePosition((Vector2)transform.position + (dir * speed * Time.deltaTime));
+            rb.MovePosition((Vector2)transform.position + (dir * speed * Time.deltaTime));
         }
 
 
+    private IEnumerator DelayAttack(){
+        yield return new WaitForSeconds(3);
+        attackBlocked = false;
+    }
 
 
     
