@@ -42,10 +42,13 @@ public class EnemyController : WeaponMethod
         }
     }
     private void FixedUpdate() {
+        anim.SetBool("isWalk",false);
             if(isInChaseRange && !isInAttackRange){
+                anim.SetBool("isWalk",true);
                 MoveCharacter(movement);
             }
             if(isInAttackRange){
+                anim.SetBool("isWalk",false);
                 if(!attackBlocked){
                     Attack();  
                     target.GetComponent<Health>().TakeDamage(1);
