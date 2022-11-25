@@ -14,7 +14,7 @@ public class WeaponMethod : MonoBehaviour
 
 
     private void Start() {
-        animator = GetComponent<Animator>();
+        this.animator = GetComponent<Animator>();
     }
 
     private void Update() {
@@ -22,7 +22,7 @@ public class WeaponMethod : MonoBehaviour
     public virtual void Attack(){
     
         if(this.attackBlocked == false){
-            //animator.SetTrigger("chage");
+            this.animator.SetTrigger("chage");
             this.attackBlocked = true;
             StartCoroutine(DelayAttack());
             
@@ -32,7 +32,7 @@ public class WeaponMethod : MonoBehaviour
     }
     public IEnumerator DelayAttack(){
         yield return new WaitForSeconds(1-this.attackspeed);
-       // animator.SetTrigger("swing");
+        this.animator.SetTrigger("swing");
         this.attackBlocked = false;
     }
     private int baseDamage = 2;

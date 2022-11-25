@@ -37,8 +37,11 @@ public class EnemyController : WeaponMethod
         dir.Normalize();
         movement = dir;
         if(shouldRotate){
-            anim.SetFloat("X",dir.x);
-            anim.SetFloat("Y",dir.y);
+            if(dir.x > 0){
+                GetComponent<SpriteRenderer>().flipX = false;
+            }else if(dir.x < 0){
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
     }
     private void FixedUpdate() {
