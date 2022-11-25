@@ -8,8 +8,6 @@ public class EnemyController : PlayerController
     public float checkRadius;
     public float attackRadius;
     public bool shouldRotate;
-    private Vector2 pointerInput;
-
     public LayerMask whatIsPlayer;
 
     private Transform target;
@@ -37,10 +35,7 @@ public class EnemyController : PlayerController
         float angle = Mathf.Atan2(dir.y,dir.x) * Mathf.Rad2Deg;
         dir.Normalize();
         movement = dir;
-
-        
     }
-
     public override void PlayerControll(Vector2 input){
             Vector2 dir = Vector2.zero;
             if (input.x < 0){
@@ -62,9 +57,6 @@ public class EnemyController : PlayerController
             if(input.x.Equals(0)&&input.y.Equals(0)){
                 this.animator.SetBool("IsWalk",false);
             }
-            
-
-            
             dir.Normalize();
             GetComponent<Rigidbody2D>().velocity = this.speed * dir;
 
@@ -74,16 +66,16 @@ public class EnemyController : PlayerController
         if(isInChaseRange && !isInAttackRange){
             PlayerControll(movement); 
             this.pointerInput = target.transform.position - transform.position;
-            weaponParent.Pointerposition = pointerInput;
+            weaponParent.Pointerposition = this.pointerInput;
         }else{
             PlayerControll(Vector2.zero); 
-            pointerInput = Vector2.zero;
+            this.pointerInput = Vector2.zero;
         }
         if(isInAttackRange){
                 movement = Vector2.zero;
                 PlayerControll(movement);
                 this.pointerInput = target.transform.position - transform.position;
-                weaponParent.Pointerposition = pointerInput;
+                weaponParent.Pointerposition = this.pointerInput;
                 GetComponentInChildren<WeaponMethod>().Attack();
         }
 
