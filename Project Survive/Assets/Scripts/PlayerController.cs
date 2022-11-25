@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
         public float speed;
         public Animator animator;
         public WeaponMethod weaponMethod;
-        private Vector2 pointerInput;
+        public Vector2 pointerInput;
         public WeaponParent weaponParent;
      //===================================================================================   
         private bool isdodge = false;
@@ -25,16 +25,16 @@ public class PlayerController : MonoBehaviour
             this.animator = GetComponent<Animator>();
         }
         public void mousedir(){
-            if(pointerInput.x > 0){
+            if(this.pointerInput.x > 0){
                 GetComponent<SpriteRenderer>().flipX = false;
-            }else if(pointerInput.x < 0){
+            }else if(this.pointerInput.x < 0){
                 GetComponent<SpriteRenderer>().flipX = true;
             }
         }
         private void Update(){
             this.inputKey = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
-            pointerInput = GetPointerInput();
-            weaponParent.Pointerposition = pointerInput;
+            this.pointerInput = GetPointerInput();
+            weaponParent.Pointerposition = this.pointerInput;
             PlayerControll(inputKey);
         }
 
