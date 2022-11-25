@@ -181,8 +181,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ec4aea02756f1419c35840bd61cf98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  inputKey: {x: 0, y: 0}
+  speed: 4
+  animator: {fileID: 0}
+  weaponMethod: {fileID: 0}
+  weaponParent: {fileID: 0}
   pointterPosition: {fileID: -7064197649111237073, guid: 85fa4e8af1a298d4d912ec8cd7f98322,
     type: 3}
 --- !u!114 &670231625202993145
@@ -425,6 +427,16 @@ PrefabInstance:
         type: 3}
       propertyPath: speedbuff
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127209638133967317, guid: 735c93361ec87fa469ac09581e9d0ca8,
+        type: 3}
+      propertyPath: targettag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127209638133967317, guid: 735c93361ec87fa469ac09581e9d0ca8,
+        type: 3}
+      propertyPath: baseDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4127209638133967317, guid: 735c93361ec87fa469ac09581e9d0ca8,
         type: 3}

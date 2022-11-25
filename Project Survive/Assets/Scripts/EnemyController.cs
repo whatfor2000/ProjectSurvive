@@ -40,7 +40,6 @@ public class EnemyController : PlayerController
 
         
     }
-
     public override void PlayerControll(Vector2 input){
             Vector2 dir = Vector2.zero;
             if (input.x < 0){
@@ -62,9 +61,6 @@ public class EnemyController : PlayerController
             if(input.x.Equals(0)&&input.y.Equals(0)){
                 this.animator.SetBool("IsWalk",false);
             }
-            
-
-            
             dir.Normalize();
             GetComponent<Rigidbody2D>().velocity = this.speed * dir;
 

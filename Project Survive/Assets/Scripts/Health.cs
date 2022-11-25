@@ -8,6 +8,8 @@ public class Health : MonoBehaviour
     private Animator animator;
     public float currentHealth;
     public float maxHealth;
+
+    
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -20,8 +22,11 @@ public class Health : MonoBehaviour
     }
 
     public void TakeDamage(int damage){
-        animator.Play("hit");
-        currentHealth -= damage;
+        if(!GetComponent<PlayerController>().iframe){
+            animator.Play("hit");
+            currentHealth -= damage;
+        }
+        
         
     }
     private void stop(){

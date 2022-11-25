@@ -15887,26 +15887,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -7764255000312837343, guid: b89d607bbce46c945a3dc73b455808d2,
-        type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: -7764255000312837343, guid: b89d607bbce46c945a3dc73b455808d2,
-        type: 3}
-      propertyPath: shouldRotate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1236391109604396727, guid: b89d607bbce46c945a3dc73b455808d2,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3905272713964658058, guid: b89d607bbce46c945a3dc73b455808d2,
-        type: 3}
-      propertyPath: m_Layer
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 3905272714587131988, guid: b89d607bbce46c945a3dc73b455808d2,
         type: 3}
       propertyPath: m_RootOrder
@@ -15967,26 +15947,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enamy
       objectReference: {fileID: 0}
-    - target: {fileID: 3905272714587131990, guid: b89d607bbce46c945a3dc73b455808d2,
-        type: 3}
-      propertyPath: m_Layer
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4271933002048248607, guid: b89d607bbce46c945a3dc73b455808d2,
-        type: 3}
-      propertyPath: m_Layer
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4714748970567820641, guid: b89d607bbce46c945a3dc73b455808d2,
-        type: 3}
-      propertyPath: baseDamage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8698767088152146608, guid: b89d607bbce46c945a3dc73b455808d2,
-        type: 3}
-      propertyPath: m_Layer
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b89d607bbce46c945a3dc73b455808d2, type: 3}
 --- !u!1001 &2069756821
@@ -15996,16 +15956,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4127209639069563063, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
-        type: 3}
-      propertyPath: targettag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4127209639069563063, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
-        type: 3}
-      propertyPath: baseDamage
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5628018141983903104, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
         type: 3}
       propertyPath: m_Name
@@ -16065,26 +16015,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5628018141983903107, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5628018141983903117, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5866353218353866892, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
-        type: 3}
-      propertyPath: speed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7566160968937476961, guid: ef67ba864d1ecc042b5f4cf48455c0a6,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef67ba864d1ecc042b5f4cf48455c0a6, type: 3}

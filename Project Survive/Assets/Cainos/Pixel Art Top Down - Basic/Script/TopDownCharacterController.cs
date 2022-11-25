@@ -14,7 +14,7 @@ namespace Cainos.PixelArtTopDown_Basic
         private Vector2 pointerInput;
         private WeaponParent weaponParent;
         private bool isdodge = false;
-        private bool iframe = false;
+
         [SerializeField]
         private InputActionReference pointterPosition;
         private void Start(){
@@ -61,7 +61,7 @@ namespace Cainos.PixelArtTopDown_Basic
             if(Input.GetAxisRaw("Jump").Equals(1) && isdodge == false){
                 speed = 10;
                 animator.SetBool("isdodge",true);
-                iframe = true;
+
                 isdodge = true;
                 StartCoroutine(Delay());
             }
@@ -81,7 +81,7 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private IEnumerator Delay(){
         yield return new WaitForSeconds(0.2f);
-        iframe = false;
+
         speed = 3;
         animator.SetBool("isdodge",false);
         yield return new WaitForSeconds(2);

@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
         public WeaponParent weaponParent;
      //===================================================================================   
         private bool isdodge = false;
-        private bool iframe = false;
+        public bool iframe = false;
         private Vector2 inputKey;
 
         
