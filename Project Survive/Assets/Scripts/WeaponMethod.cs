@@ -5,9 +5,10 @@ using UnityEngine;
 public class WeaponMethod : MonoBehaviour
 {
 
-   public Animator animator;
-     public float attackspeed;
-     public bool attackBlocked = false;
+    public Animator animator;
+    public float attackspeed;
+    public bool attackBlocked = false;
+
 
     // Start is called before the first frame update
 
@@ -17,8 +18,6 @@ public class WeaponMethod : MonoBehaviour
         this.animator = GetComponent<Animator>();
     }
 
-    private void Update() {
-    }
     public virtual void Attack(){
     
         if(this.attackBlocked == false){
@@ -35,7 +34,8 @@ public class WeaponMethod : MonoBehaviour
         this.animator.SetTrigger("swing");
         this.attackBlocked = false;
     }
-    private int baseDamage = 2;
+    
+    public int baseDamage = 2;
     private void OnTriggerEnter2D(Collider2D target) {
         if(target.gameObject.CompareTag("Enamy")){
             target.gameObject.GetComponent<Health>().TakeDamage(baseDamage); 

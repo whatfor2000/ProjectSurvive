@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : WeaponMethod
+public class EnemyController : MonoBehaviour
 {
     public float speed;
     public float checkRadius;
@@ -51,13 +51,8 @@ public class EnemyController : WeaponMethod
                 MoveCharacter(movement);
             }
             if(isInAttackRange){
+                GetComponentInChildren<EnemyWeaponMethod>().Attack();
                 anim.SetBool("isWalk",false);
-                if(!attackBlocked){
-                    Attack();  
-                    target.GetComponent<Health>().TakeDamage(1);
-                    rb.velocity = Vector2.zero;
-                    StartCoroutine(DelayAttack());
-                }
             }
         }
         private void MoveCharacter(Vector2 dir){
