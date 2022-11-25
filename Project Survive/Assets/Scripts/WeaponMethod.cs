@@ -9,6 +9,9 @@ public class WeaponMethod : MonoBehaviour
     public float attackspeed;
     public bool attackBlocked = false;
 
+    public Targettag targettag;
+    
+
 
     // Start is called before the first frame update
 
@@ -37,9 +40,15 @@ public class WeaponMethod : MonoBehaviour
     
     public int baseDamage = 2;
     private void OnTriggerEnter2D(Collider2D target) {
-        if(target.gameObject.CompareTag("Enamy")){
+        if(target.gameObject.CompareTag(targettag.ToString())){
             target.gameObject.GetComponent<Health>().TakeDamage(baseDamage); 
         }
     }
+
+    public enum Targettag{
+    Player,
+    Enamy
+}
+
    
 }

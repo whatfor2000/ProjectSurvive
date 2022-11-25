@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class EnemyController : PlayerController
 {
-    private new float speed;
+    
     public float checkRadius;
     public float attackRadius;
     public bool shouldRotate;
-    private new Animator animator;
-    private new WeaponMethod weaponMethod;
-    private new WeaponParent weaponParent;
+    private Vector2 pointerInput;
 
     public LayerMask whatIsPlayer;
 
     private Transform target;
     private Rigidbody2D rb;
-    private Animator anim;
     private Vector2 movement;
     public Vector3 dir;
 
@@ -25,10 +22,13 @@ public class EnemyController : PlayerController
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
+        this.weaponParent = GetComponentInChildren<WeaponParent>();
+        this.weaponMethod = GameObject.Find("Sword").GetComponent<WeaponMethod>();
     }
     private void Update() {
+
 
         Debug.DrawLine(transform.position,target.position,Color.blue);
         isInChaseRange = Physics2D.OverlapCircle(transform.position,checkRadius,whatIsPlayer);
@@ -71,17 +71,25 @@ public class EnemyController : PlayerController
               mousedir();  
             }
             dir.Normalize();
-            GetComponent<Rigidbody2D>().velocity = speed * dir;
+            GetComponent<Rigidbody2D>().velocity = this.speed * dir;
 
         }
 
     private void FixedUpdate() {
         if(isInChaseRange && !isInAttackRange){
             PlayerControll(movement); 
+            this.pointerInput = target.transform.position - transform.position;
+            weaponParent.Pointerposition = pointerInput;
+        }else{
+            PlayerControll(Vector2.zero); 
+            pointerInput = Vector2.zero;
         }
         if(isInAttackRange){
                 movement = Vector2.zero;
                 PlayerControll(movement);
+                this.pointerInput = target.transform.position - transform.position;
+                weaponParent.Pointerposition = pointerInput;
+                GetComponentInChildren<WeaponMethod>().Attack();
         }
 
     }

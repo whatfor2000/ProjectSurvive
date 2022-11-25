@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     //==============================================================================
-        public float speed = 3;
+        public float speed;
         public Animator animator;
         public WeaponMethod weaponMethod;
         private Vector2 pointerInput;
