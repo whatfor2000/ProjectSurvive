@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponMethod : MonoBehaviour
 {
 
-    public Animator animator;
+   public Animator animator;
      public float attackspeed;
      public bool attackBlocked = false;
 
@@ -19,10 +19,10 @@ public class WeaponMethod : MonoBehaviour
 
     private void Update() {
     }
-    public void Attack(){
+    public virtual void Attack(){
     
         if(this.attackBlocked == false){
-            animator.SetTrigger("chage");
+            //animator.SetTrigger("chage");
             this.attackBlocked = true;
             StartCoroutine(DelayAttack());
             
@@ -30,9 +30,9 @@ public class WeaponMethod : MonoBehaviour
             return;
         }
     }
-    private IEnumerator DelayAttack(){
+    public IEnumerator DelayAttack(){
         yield return new WaitForSeconds(1-this.attackspeed);
-        animator.SetTrigger("swing");
+       // animator.SetTrigger("swing");
         this.attackBlocked = false;
     }
     private int baseDamage = 2;

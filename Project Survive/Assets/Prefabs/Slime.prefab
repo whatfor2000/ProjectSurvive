@@ -85,6 +85,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06cb5ae4b385576429d425e3d58a2ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  attackspeed: 0
+  attackBlocked: 0
   speed: 3
   checkRadius: 3
   attackRadius: 1

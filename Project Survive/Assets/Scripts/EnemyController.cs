@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyController : WeaponMethod
 {
-    private new bool attackBlocked = false;
-    public new float attackspeed;
     public float speed;
     public float checkRadius;
     public float attackRadius;
@@ -18,7 +16,6 @@ public class EnemyController : WeaponMethod
     private Animator anim;
     private Vector2 movement;
     public Vector3 dir;
-
 
     private bool isInChaseRange;
     private bool isInAttackRange;
@@ -62,11 +59,7 @@ public class EnemyController : WeaponMethod
         }
 
 
-    private IEnumerator DelayAttack(){
-        yield return new WaitForSeconds(3);
-        attackBlocked = false;
-    }
-
+    
 
     
 
