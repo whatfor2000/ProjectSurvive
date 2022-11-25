@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : PlayerController
+public class EnemyController : WeaponMethod
 {
-    private bool attackBlocked = false;
-    public new float speed;
+    private new bool attackBlocked = false;
+    public new float attackspeed;
+    public float speed;
     public float checkRadius;
     public float attackRadius;
     public bool shouldRotate;
@@ -49,7 +50,7 @@ public class EnemyController : PlayerController
             }
             if(isInAttackRange){
                 if(!attackBlocked){
-                    attackBlocked = true;    
+                    Attack();  
                     target.GetComponent<Health>().TakeDamage(1);
                     rb.velocity = Vector2.zero;
                     StartCoroutine(DelayAttack());

@@ -21,9 +21,9 @@ public class WeaponMethod : MonoBehaviour
     }
     public void Attack(){
     
-        if(attackBlocked == false){
+        if(this.attackBlocked == false){
             animator.SetTrigger("chage");
-            attackBlocked = true;
+            this.attackBlocked = true;
             StartCoroutine(DelayAttack());
             
         }else{
@@ -31,9 +31,9 @@ public class WeaponMethod : MonoBehaviour
         }
     }
     private IEnumerator DelayAttack(){
-        yield return new WaitForSeconds(1-attackspeed);
+        yield return new WaitForSeconds(1-this.attackspeed);
         animator.SetTrigger("swing");
-        attackBlocked = false;
+        this.attackBlocked = false;
     }
     private int baseDamage = 2;
     private void OnTriggerEnter2D(Collider2D target) {
