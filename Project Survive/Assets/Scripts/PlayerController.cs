@@ -5,25 +5,26 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    //==============================================================================
         public float speed = 3;
-        private Animator animator;
-        private WeaponMethod weaponMethod;
+        public Animator animator;
+        public WeaponMethod weaponMethod;
         private Vector2 pointerInput;
-        private WeaponParent weaponParent;
+        public WeaponParent weaponParent;
+     //===================================================================================   
         private bool isdodge = false;
         private bool iframe = false;
+        private Vector2 inputKey;
 
-        public Vector2 inputKey;
         
         [SerializeField]
         private InputActionReference pointterPosition;
         private void Start(){
             weaponParent = GetComponentInChildren<WeaponParent>();
             weaponMethod = GameObject.Find("Sword").GetComponent<WeaponMethod>();
-            animator = GetComponent<Animator>();
-
+            this.animator = GetComponent<Animator>();
         }
-        void mousedir(){
+        public void mousedir(){
             if(pointerInput.x > 0){
                 GetComponent<SpriteRenderer>().flipX = false;
             }else if(pointerInput.x < 0){
@@ -31,7 +32,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         private void Update(){
-            inputKey = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
+            this.inputKey = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
             pointerInput = GetPointerInput();
             weaponParent.Pointerposition = pointerInput;
             PlayerControll(inputKey);
@@ -42,29 +43,26 @@ public class PlayerController : MonoBehaviour
             Vector2 dir = Vector2.zero;
             if (input.x < 0){
                 dir.x = -1;
-                animator.SetBool("IsWalk",true);
+                this.animator.SetBool("IsWalk",true);
                 GetComponent<SpriteRenderer>().flipX = true;
             }else if (input.x > 0){
                 dir.x = 1;
-                animator.SetBool("IsWalk",true);
+                this.animator.SetBool("IsWalk",true);
                 GetComponent<SpriteRenderer>().flipX = false;
             }
             if (input.y > 0){
                 dir.y = 1;
-                animator.SetBool("IsWalk",true); 
-           
+                this.animator.SetBool("IsWalk",true); 
             }else if (input.y < 0){
                 dir.y = -1;
-                animator.SetBool("IsWalk",true); 
-                
+                this.animator.SetBool("IsWalk",true); 
             }
             if(input.x.Equals(0)&&input.y.Equals(0)){
-                animator.SetBool("IsWalk",false);
+                this.animator.SetBool("IsWalk",false);
             }
-
             if(Input.GetAxisRaw("Jump").Equals(1) && isdodge == false){
                 speed = 10;
-                animator.SetBool("isdodge",true);
+                this.animator.SetBool("isdodge",true);
                 iframe = true;
                 isdodge = true;
                 StartCoroutine(Delay());
@@ -81,11 +79,11 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        private IEnumerator Delay(){
+        public IEnumerator Delay(){
         yield return new WaitForSeconds(0.2f);
         iframe = false;
         speed = 3;
-        animator.SetBool("isdodge",false);
+        this.animator.SetBool("isdodge",false);
         yield return new WaitForSeconds(2);
         isdodge = false;
         }

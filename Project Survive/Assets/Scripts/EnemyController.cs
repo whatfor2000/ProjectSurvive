@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : PlayerController
 {
-    public float speed;
+    private new float speed;
     public float checkRadius;
     public float attackRadius;
     public bool shouldRotate;
+    private new Animator animator;
+    private new WeaponMethod weaponMethod;
+    private new WeaponParent weaponParent;
 
     public LayerMask whatIsPlayer;
 
@@ -26,42 +29,63 @@ public class EnemyController : MonoBehaviour
         target = GameObject.FindWithTag("Player").transform;
     }
     private void Update() {
-        Debug.DrawLine(transform.position,target.position,Color.blue);
-        //anim.SetBool("isRunning",isInChaseRange);
 
+        Debug.DrawLine(transform.position,target.position,Color.blue);
         isInChaseRange = Physics2D.OverlapCircle(transform.position,checkRadius,whatIsPlayer);
         isInAttackRange = Physics2D.OverlapCircle(transform.position,attackRadius,whatIsPlayer);
-
         dir = (target.position - transform.position);
         float angle = Mathf.Atan2(dir.y,dir.x) * Mathf.Rad2Deg;
         dir.Normalize();
         movement = dir;
-        if(shouldRotate){
-            if(dir.x > 0){
-                GetComponent<SpriteRenderer>().flipX = false;
-            }else if(dir.x < 0){
-                GetComponent<SpriteRenderer>().flipX = true;
-            }
-        }
+
+        
     }
+
+    public override void PlayerControll(Vector2 input){
+            Vector2 dir = Vector2.zero;
+            if (input.x < 0){
+                dir.x = -1;
+                this.animator.SetBool("IsWalk",true);
+                GetComponent<SpriteRenderer>().flipX = true;
+            }else if (input.x > 0){
+                dir.x = 1;
+                this.animator.SetBool("IsWalk",true);
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            if (input.y > 0){
+                dir.y = 1;
+                this.animator.SetBool("IsWalk",true); 
+            }else if (input.y < 0){
+                dir.y = -1;
+                this.animator.SetBool("IsWalk",true); 
+            }
+            if(input.x.Equals(0)&&input.y.Equals(0)){
+                this.animator.SetBool("IsWalk",false);
+            }
+            
+
+            if(Input.GetMouseButton(0)){
+                GetComponentInChildren<WeaponMethod>().Attack();
+            }
+            if(GetComponentInChildren<WeaponMethod>().attackBlocked){
+              mousedir();  
+            }
+            dir.Normalize();
+            GetComponent<Rigidbody2D>().velocity = speed * dir;
+
+        }
+
     private void FixedUpdate() {
-        anim.SetBool("isWalk",false);
-            if(isInChaseRange && !isInAttackRange){
-                anim.SetBool("isWalk",true);
-                MoveCharacter(movement);
-            }
-            if(isInAttackRange){
-                GetComponentInChildren<EnemyWeaponMethod>().Attack();
-                anim.SetBool("isWalk",false);
-            }
+        if(isInChaseRange && !isInAttackRange){
+            PlayerControll(movement); 
         }
-        private void MoveCharacter(Vector2 dir){
-            rb.MovePosition((Vector2)transform.position + (dir * this.speed * Time.deltaTime));
+        if(isInAttackRange){
+                movement = Vector2.zero;
+                PlayerControll(movement);
         }
 
-
-    //
-
+    }
+  
     
 
     }
