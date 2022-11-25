@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3905272713964658057}
   - component: {fileID: 3905272713964658056}
-  m_Layer: 19
+  m_Layer: 20
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 4051285004481700471}
   - component: {fileID: 2077373087287753092}
   - component: {fileID: -7764255000312837343}
-  m_Layer: 19
+  m_Layer: 20
   m_Name: Enamy
   m_TagString: Enamy
   m_Icon: {fileID: 0}
@@ -178,8 +178,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1869315837
   m_SortingLayer: 1
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 1295319881, guid: 24adcafe3e260cf4e8bf10f53b059523, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 1176178781, guid: 19bd3f7c6ba39b5448268fd0c1f2528b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -247,7 +247,7 @@ Animator:
   m_GameObject: {fileID: 3905272714587131990}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2d8c74c2225478c4f8be104da02180a8, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1657e828058f78c47b898b606e82d011, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06cb5ae4b385576429d425e3d58a2ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   animator: {fileID: 4051285004481700471}
   weaponMethod: {fileID: 4714748970567820641}
   weaponParent: {fileID: 5357892471275897206}
@@ -323,7 +323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3815891906832544250}
   - component: {fileID: 5357892471275897206}
-  m_Layer: 19
+  m_Layer: 20
   m_Name: WeaponParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ PrefabInstance:
     - target: {fileID: 40768713539239428, guid: 735c93361ec87fa469ac09581e9d0ca8,
         type: 3}
       propertyPath: m_Layer
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1759681380395068143, guid: 735c93361ec87fa469ac09581e9d0ca8,
         type: 3}
@@ -430,10 +430,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3224047626432449317, guid: 735c93361ec87fa469ac09581e9d0ca8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1530167539, guid: c9adf318fd226354994615dbd8554f70,
+        type: 3}
+    - target: {fileID: 3224047626432449317, guid: 735c93361ec87fa469ac09581e9d0ca8,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4127209638133967317, guid: 735c93361ec87fa469ac09581e9d0ca8,
         type: 3}
       propertyPath: speedbuff
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127209638133967317, guid: 735c93361ec87fa469ac09581e9d0ca8,
+        type: 3}
+      propertyPath: baseDamage
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4127209638133967317, guid: 735c93361ec87fa469ac09581e9d0ca8,
         type: 3}
@@ -444,6 +460,26 @@ PrefabInstance:
         type: 3}
       propertyPath: attackcooldown
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566160967985627651, guid: 735c93361ec87fa469ac09581e9d0ca8,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566160967985627651, guid: 735c93361ec87fa469ac09581e9d0ca8,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566160967985627651, guid: 735c93361ec87fa469ac09581e9d0ca8,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.09375
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566160967985627651, guid: 735c93361ec87fa469ac09581e9d0ca8,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 735c93361ec87fa469ac09581e9d0ca8, type: 3}

@@ -108,10 +108,10 @@ TextureImporter:
       name: Bandit_0
       rect:
         serializedVersion: 2
-        x: 17
+        x: 16
         y: 128
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,10 +129,10 @@ TextureImporter:
       name: Bandit_1
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 128
-        width: 12
-        height: 15
+        width: 16
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: Bandit_6
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 96
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,9 +171,9 @@ TextureImporter:
       name: Bandit_7
       rect:
         serializedVersion: 2
-        x: 17
+        x: 16
         y: 64
-        width: 15
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -192,9 +192,9 @@ TextureImporter:
       name: Bandit_8
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 64
-        width: 15
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -213,9 +213,9 @@ TextureImporter:
       name: Bandit_9
       rect:
         serializedVersion: 2
-        x: 49
+        x: 48
         y: 64
-        width: 15
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -236,8 +236,8 @@ TextureImporter:
         serializedVersion: 2
         x: 16
         y: 32
-        width: 15
-        height: 6
+        width: 16
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,12 +255,12 @@ TextureImporter:
       name: Bandit_2
       rect:
         serializedVersion: 2
-        x: 79
-        y: 127
-        width: 48
-        height: 17
-      alignment: 9
-      pivot: {x: 0.20720164, y: 0.010736354}
+        x: 80
+        y: 128
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -276,10 +276,10 @@ TextureImporter:
       name: Bandit_3
       rect:
         serializedVersion: 2
-        x: 18
-        y: 97
-        width: 13
-        height: 15
+        x: 16
+        y: 96
+        width: 16
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,10 +297,10 @@ TextureImporter:
       name: Bandit_4
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 96
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,9 +319,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 97
+        y: 96
         width: 16
-        height: 15
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
