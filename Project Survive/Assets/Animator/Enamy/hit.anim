@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnemyHIt
+  m_Name: hit
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -24,7 +24,7 @@ AnimationClip:
     - time: 0.05
       value: {fileID: 659667842, guid: 19bd3f7c6ba39b5448268fd0c1f2528b, type: 3}
     - time: 0.1
-      value: {fileID: 1044135261, guid: 19bd3f7c6ba39b5448268fd0c1f2528b, type: 3}
+      value: {fileID: 526874023, guid: 19bd3f7c6ba39b5448268fd0c1f2528b, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,7 +46,7 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 1044135261, guid: 19bd3f7c6ba39b5448268fd0c1f2528b, type: 3}
     - {fileID: 659667842, guid: 19bd3f7c6ba39b5448268fd0c1f2528b, type: 3}
-    - {fileID: 1044135261, guid: 19bd3f7c6ba39b5448268fd0c1f2528b, type: 3}
+    - {fileID: 526874023, guid: 19bd3f7c6ba39b5448268fd0c1f2528b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -71,4 +71,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.11666667
+    functionName: stop
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
