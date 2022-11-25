@@ -5,11 +5,12 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    private Animator animator;
     public float currentHealth;
     public float maxHealth;
     void Start()
     {
+        animator = GetComponent<Animator>();
         currentHealth = maxHealth;    
     }
     private void Update() {
@@ -19,6 +20,11 @@ public class Health : MonoBehaviour
     }
 
     public void TakeDamage(int damage){
+        animator.Play("hit");
         currentHealth -= damage;
+        
+    }
+    private void stop(){
+        animator.Play("Idle");
     }
 }
