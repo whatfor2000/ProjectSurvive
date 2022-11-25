@@ -50,6 +50,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   attackspeed: 0
   attackBlocked: 0
+  targettag: 0
   baseDamage: 2
 --- !u!95 &2138795636746490663
 Animator:
@@ -130,7 +131,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40768713539239428}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
