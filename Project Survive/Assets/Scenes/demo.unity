@@ -2408,16 +2408,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6871213897828986984, guid: 1281fe071d420bb46bfe8926fd9a5ac5,
         type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 475951468}
+    - target: {fileID: 6871213897828986984, guid: 1281fe071d420bb46bfe8926fd9a5ac5,
+        type: 3}
       propertyPath: checkRadius
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6871213897828986984, guid: 1281fe071d420bb46bfe8926fd9a5ac5,
         type: 3}
       propertyPath: shouldRotate
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1281fe071d420bb46bfe8926fd9a5ac5, type: 3}
+--- !u!95 &475951468 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 286327600006660730, guid: 1281fe071d420bb46bfe8926fd9a5ac5,
+    type: 3}
+  m_PrefabInstance: {fileID: 445214759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &570551690
 GameObject:
   m_ObjectHideFlags: 0
