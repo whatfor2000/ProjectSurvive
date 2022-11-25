@@ -64,12 +64,7 @@ public class EnemyController : PlayerController
             }
             
 
-            if(Input.GetMouseButton(0)){
-                GetComponentInChildren<WeaponMethod>().Attack();
-            }
-            if(GetComponentInChildren<WeaponMethod>().attackBlocked){
-              mousedir();  
-            }
+            
             dir.Normalize();
             GetComponent<Rigidbody2D>().velocity = this.speed * dir;
 
