@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enamy
   - weapon
+  - Wall
   layers:
   - Default
   - TransparentFX

@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : PlayerController
 {
-    public float speed = 3f;
+    private bool attackBlocked = false;
+    public new float speed;
     public float checkRadius;
     public float attackRadius;
-
     public bool shouldRotate;
 
     public LayerMask whatIsPlayer;
@@ -46,17 +46,25 @@ public class EnemyController : MonoBehaviour
     private void FixedUpdate() {
             if(isInChaseRange && !isInAttackRange){
                 MoveCharacter(movement);
-                
             }
             if(isInAttackRange){
-                rb.velocity = Vector2.zero;
+                if(!attackBlocked){
+                    attackBlocked = true;    
+                    target.GetComponent<Health>().TakeDamage(1);
+                    rb.velocity = Vector2.zero;
+                    StartCoroutine(DelayAttack());
+                }
             }
         }
         private void MoveCharacter(Vector2 dir){
-               rb.MovePosition((Vector2)transform.position + (dir * speed * Time.deltaTime));
+            rb.MovePosition((Vector2)transform.position + (dir * this.speed * Time.deltaTime));
         }
 
 
+    private IEnumerator DelayAttack(){
+        yield return new WaitForSeconds(3);
+        attackBlocked = false;
+    }
 
 
     
