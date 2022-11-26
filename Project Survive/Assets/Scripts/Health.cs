@@ -21,10 +21,14 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage){
+    public void TakeDamage(int damage, GameObject sender){
         if(!GetComponent<PlayerController>().iframe){
             animator.Play("hit");
             currentHealth -= damage;
+            knockback temp = GetComponent<knockback>();
+            if(temp != null){
+                temp.KnockBack(sender);
+            }
         }
         
         
