@@ -41,7 +41,7 @@ public class WeaponMethod : MonoBehaviour
     public int baseDamage = 2;
     private void OnTriggerEnter2D(Collider2D target) {
         if(target.gameObject.CompareTag(targettag.ToString())){
-            target.gameObject.GetComponent<Health>().TakeDamage(baseDamage,this.gameObject); 
+            target.gameObject.GetComponent<stats>().TakeDamage(baseDamage,this.gameObject); 
         }
     }
 
