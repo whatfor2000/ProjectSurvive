@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
         private InputActionReference pointterPosition;
         private void Start(){
             weaponParent = GetComponentInChildren<WeaponParent>();
-            weaponMethod = GameObject.Find("Sword").GetComponent<WeaponMethod>();
+            weaponMethod = GetComponentInChildren<WeaponMethod>();
             this.animator = GetComponent<Animator>();
         }
         public void mousedir(){

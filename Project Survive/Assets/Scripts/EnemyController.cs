@@ -23,7 +23,7 @@ public class EnemyController : PlayerController
         animator = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
         this.weaponParent = GetComponentInChildren<WeaponParent>();
-        this.weaponMethod = GameObject.Find("Sword").GetComponent<WeaponMethod>();
+        this.weaponMethod = GetComponentInChildren<WeaponMethod>();
     }
     private void Update() {
 
