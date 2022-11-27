@@ -29,9 +29,14 @@ public class stats : MonoBehaviour
             if(temp != null){
                 temp.KnockBack(sender);
             }
-        }
-        
-        
+        }  
+    }
+    public void TakeDamage(int damage){
+        if(!GetComponent<PlayerController>().iframe){
+            animator.Play("hit");
+            currentHealth -= damage;
+            knockback temp = GetComponent<knockback>();
+        }  
     }
     private void stop(){
         animator.Play("Idle");
