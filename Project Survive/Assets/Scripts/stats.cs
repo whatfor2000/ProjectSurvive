@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class stats : MonoBehaviour
 {
+
+
     // Start is called before the first frame update
     private Animator animator;
     public float currentHealth;
     public float maxHealth;
+
+    public healthbar hp;
+    
+   
 
     
     void Start()
@@ -22,6 +29,7 @@ public class stats : MonoBehaviour
     }
 
     public void TakeDamage(int damage, GameObject sender){
+        
         if(!GetComponent<PlayerController>().iframe){
             animator.Play("hit");
             currentHealth -= damage;
@@ -29,7 +37,12 @@ public class stats : MonoBehaviour
             if(temp != null){
                 temp.KnockBack(sender);
             }
-        }  
+        }
+        if(!currentHealth.Equals(maxHealth)){
+            hp.enable();
+        }else{
+            hp.disable();
+        }
     }
     public void TakeDamage(int damage){
         if(!GetComponent<PlayerController>().iframe){

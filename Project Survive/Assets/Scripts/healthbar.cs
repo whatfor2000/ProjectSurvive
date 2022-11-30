@@ -19,4 +19,12 @@ public class healthbar : MonoBehaviour
     {
         HealthBar.value = health.currentHealth / health.maxHealth;
     }
+
+    public void enable(){
+        gameObject.SetActive(true);
+    }
+    public void disable(){
+        gameObject.SetActive(false);
+    }
+
 }
